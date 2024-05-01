@@ -139,7 +139,7 @@ public class Renderer implements GLSurfaceView.Renderer, View.OnTouchListener{
 		}
 	}
 
-	public void suffle(){
+	public void shuffle(){
 		fullAnimationDuration = SUFFLING_ANIMATION_DURATION;
 		Random rand = new Random();
 		int[][] lastFaceId = null;

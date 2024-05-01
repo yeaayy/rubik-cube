@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import com.yeaayy.util.Log;
 
 public class MainActivity extends Activity implements View.OnClickListener, DialogInterface.OnClickListener{
-	private static final int SUFFLE=0x4642, RESET=0x953f;
+	private static final int SHUFFLE=0x4642, RESET=0x953f;
 
 	Renderer renderer;
 	int action;
@@ -34,17 +34,17 @@ public class MainActivity extends Activity implements View.OnClickListener, Dial
 		LinearLayout rootContainer=new LinearLayout(this);
 		LinearLayout buttonContainer=new LinearLayout(this);
 
-		Button suffleButton = new Button(this);
-		suffleButton.setId(SUFFLE);
-		suffleButton.setText("Suffle");
-		suffleButton.setOnClickListener(this);
+		Button shuffleButton = new Button(this);
+		shuffleButton.setId(SHUFFLE);
+		shuffleButton.setText("Shuffle");
+		shuffleButton.setOnClickListener(this);
 
 		Button resetButton = new Button(this);
 		resetButton.setId(RESET);
 		resetButton.setText("Reset");
 		resetButton.setOnClickListener(this);
 
-		buttonContainer.addView(suffleButton, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f));
+		buttonContainer.addView(shuffleButton, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f));
 		buttonContainer.addView(resetButton, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1.0f));
 
 		rootContainer.addView(buttonContainer, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -72,8 +72,8 @@ public class MainActivity extends Activity implements View.OnClickListener, Dial
 
 	@Override
 	public void onClick(DialogInterface di, int bid){
-		if(action==SUFFLE){
-			renderer.suffle();
+		if(action==SHUFFLE){
+			renderer.shuffle();
 		}else{
 			renderer.reset();
 		}
